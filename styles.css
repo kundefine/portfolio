@@ -194,12 +194,15 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1em;
+    position: relative;
+    z-index: 102;
 }
 
 .logo .dot {
@@ -247,6 +250,54 @@ section {
     list-style: none;
     display: flex;
     gap: var(--space-md);
+}
+
+.nav-toggle {
+    display: none;
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--outline-variant);
+    border-radius: 16px;
+    background: rgba(25, 37, 64, 0.72);
+    backdrop-filter: blur(20px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    position: relative;
+    z-index: 102;
+}
+
+.nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--on-surface);
+    border-radius: 999px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(143, 245, 255, 0.4);
+}
+
+body.nav-open {
+    overflow: hidden;
+}
+
+body.nav-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+body.nav-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+body.nav-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .nav-links a {
@@ -305,6 +356,7 @@ section {
 .highlight {
     color: var(--primary);
     font-weight: 600;
+    text-decoration: none;
 }
 
 /* Buttons */
@@ -792,6 +844,49 @@ section {
 }
 
 @media (max-width: 900px) {
+    .nav-container {
+        padding: 1rem var(--space-sm);
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: var(--space-sm);
+        right: var(--space-sm);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 12px;
+        background: rgba(9, 19, 40, 0.94);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(143, 245, 255, 0.12);
+        border-radius: 24px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 101;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 16px;
+        border-radius: 16px;
+    }
+
+    body.nav-open .nav-links {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
     .hero-shell {
         border-radius: 28px;
     }

@@ -253,6 +253,33 @@ function initHeroMonitorTilt() {
     });
 }
 
+// --- MOBILE NAVIGATION ---
+function initMobileNav() {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (!toggle || !navLinks) return;
+
+    function closeNav() {
+        document.body.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeNav);
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900) {
+            closeNav();
+        }
+    });
+}
+
 // --- INITIALIZE ALL ---
 document.addEventListener('DOMContentLoaded', () => {
     initThreeJS();
@@ -260,4 +287,5 @@ document.addEventListener('DOMContentLoaded', () => {
     injectContent();
     initScrollAnimations();
     initHeroMonitorTilt();
+    initMobileNav();
 });

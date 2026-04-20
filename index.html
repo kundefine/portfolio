@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer | Hyper-Space Portfolio</title>
+    <meta name="description" content="Portfolio of a passionate Software Engineer specializing in backend architecture, scalable web apps, and real-time systems.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <span class="logo">ARCHITECT<span class="dot">.</span></span>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="v-center">
+            <div class="content-wrapper split-grid hero-split">
+                <div class="grid-left">
+                    <div class="hero-labels">
+                        <span class="terminal-tag">SYSTEM_INITIALIZED: v2.0.4</span>
+                    </div>
+                    <h1 class="display-lg">
+                        I BUILD <br>
+                        <span class="gradient-text">SCALABLE SYSTEMS</span>
+                    </h1>
+                    <p class="body-lg typing-text" id="intro-typing">
+                        > Initializing software engineer profile...
+                    </p>
+                    <div class="cta-group">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="grid-right hero-visual">
+                    <div class="hero-core-container">
+                        <!-- SVG Animation will be injected here or hardcoded -->
+                        <svg class="hero-core-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="core-ring ring-1" cx="200" cy="200" r="180" />
+                            <circle class="core-ring ring-2" cx="200" cy="200" r="140" />
+                            <circle class="core-ring ring-3" cx="200" cy="200" r="100" />
+                            <circle class="core-ring ring-4" cx="200" cy="200" r="60" stroke-dasharray="10, 20" />
+                            <g class="core-inner">
+                                <circle cx="200" cy="200" r="20" fill="var(--primary)" />
+                                <path class="pulse-line" d="M200 150 V250 M150 200 H250" />
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Vertical Data Stream SVG -->
+            <svg class="scroll-stream" viewBox="0 0 2 1000" preserveAspectRatio="none">
+                <path id="stream-path" d="M1 0 L1 1000" />
+            </svg>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="content-wrapper split-grid">
+                <div class="grid-left">
+                    <h2 class="headline-lg">ABOUT_<br>ME</h2>
+                </div>
+                <div class="grid-right">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">about_me.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="body-md">
+                                I am a passionate Software Engineer with over 2 years of professional experience building scalable web applications and backend systems. I specialize in designing efficient APIs, handling complex business logic, and working with modern full-stack technologies.
+                            </p>
+                            <p class="body-md">
+                                Currently working at <span class="highlight">Technonext</span>, I have contributed to multiple real-world projects including e-commerce platforms, ticketing systems, exam platforms, and service-based applications. I enjoy solving challenging problems, optimizing performance, and building systems that are reliable and maintainable.
+                            </p>
+                            <p class="body-md">
+                                Beyond coding, I have a growing interest in system-level technologies like VoIP, SIP servers, and real-time communication systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="content-wrapper">
+                <h2 class="headline-lg">TECH_<br>STACK</h2>
+                <div class="skills-container">
+                    <!-- Skills categories will be injected here or hardcoded -->
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="chips-group" id="backend-skills"></div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="chips-group" id="frontend-skills"></div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Database & DevOps</h3>
+                        <div class="chips-group" id="devops-skills"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="content-wrapper">
+                <h2 class="headline-lg">FEATURED_<br>PROJECTS</h2>
+                <div class="projects-grid" id="projects-container">
+                    <!-- Project cards will be injected -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="content-wrapper split-grid">
+                <div class="grid-left">
+                    <h2 class="headline-lg">REACH_<br>OUT</h2>
+                    <p class="body-md">Let's discuss backend architecture, system design, or real-time communication systems.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">LinkedIn</a>
+                        <a href="#" class="social-icon">GitHub</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                    </div>
+                </div>
+                <div class="grid-right">
+                    <form id="contact-form" class="glass-form">
+                        <div class="input-group">
+                            <label for="name">NAME</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="input-group">
+                            <label for="message">MESSAGE</label>
+                            <textarea id="message" rows="5" required placeholder="Let's build something..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">SEND SIGNAL</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="content-wrapper">
+        <p class="body-sm">© 2024 ARCHITECT | BUILT WITH PRECISION</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

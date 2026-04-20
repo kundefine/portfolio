@@ -34,36 +34,50 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="v-center">
-            <div class="content-wrapper split-grid hero-split">
-                <div class="grid-left">
-                    <div class="hero-labels">
-                        <span class="terminal-tag">SYSTEM_INITIALIZED: v2.0.4</span>
+            <div class="content-wrapper">
+                <!-- Moved VCS Monitor to Top of Hero -->
+                <div class="vcs-hero-monitor">
+                    <div class="monitor-header">
+                        <span class="ping-dot"></span>
+                        <span class="vcs-label">LIVE_VCS_FEED</span>
                     </div>
-                    <h1 class="display-lg">
-                        I BUILD <br>
-                        <span class="gradient-text">SCALABLE SYSTEMS</span>
-                    </h1>
-                    <p class="body-lg typing-text" id="intro-typing">
-                        > Initializing software engineer profile...
-                    </p>
-                    <div class="cta-group">
-                        <a href="#projects" class="btn-primary">View Projects</a>
-                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                    <div class="monitor-content">
+                        <img src="img/vcs.png" alt="GitHub Activity" class="vcs-img">
                     </div>
+                    <div class="monitor-footer">SYSTEM_ACTIVITY_MONITOR_v1.0</div>
                 </div>
-                <div class="grid-right hero-visual">
-                    <div class="hero-core-container">
-                        <!-- SVG Animation will be injected here or hardcoded -->
-                        <svg class="hero-core-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="core-ring ring-1" cx="200" cy="200" r="180" />
-                            <circle class="core-ring ring-2" cx="200" cy="200" r="140" />
-                            <circle class="core-ring ring-3" cx="200" cy="200" r="100" />
-                            <circle class="core-ring ring-4" cx="200" cy="200" r="60" stroke-dasharray="10, 20" />
-                            <g class="core-inner">
-                                <circle cx="200" cy="200" r="20" fill="var(--primary)" />
-                                <path class="pulse-line" d="M200 150 V250 M150 200 H250" />
-                            </g>
-                        </svg>
+
+                <div class="split-grid hero-split">
+                    <div class="grid-left">
+                        <div class="hero-labels">
+                            <span class="terminal-tag">SYSTEM_INITIALIZED: v2.0.4</span>
+                        </div>
+                        <h1 class="display-lg">
+                            I BUILD <br>
+                            <span class="gradient-text">SCALABLE SYSTEMS</span>
+                        </h1>
+                        <p class="body-lg typing-text" id="intro-typing">
+                            > Initializing software engineer profile...
+                        </p>
+                        <div class="cta-group">
+                            <a href="#projects" class="btn-primary">View Projects</a>
+                            <a href="#contact" class="btn-secondary">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="grid-right hero-visual">
+                        <div class="hero-core-container">
+                            <!-- SVG Animation -->
+                            <svg class="hero-core-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="core-ring ring-1" cx="200" cy="200" r="180" />
+                                <circle class="core-ring ring-2" cx="200" cy="200" r="140" />
+                                <circle class="core-ring ring-3" cx="200" cy="200" r="100" />
+                                <circle class="core-ring ring-4" cx="200" cy="200" r="60" stroke-dasharray="10, 20" />
+                                <g class="core-inner">
+                                    <circle cx="200" cy="200" r="20" fill="var(--primary)" />
+                                    <path class="pulse-line" d="M200 150 V250 M150 200 H250" />
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>

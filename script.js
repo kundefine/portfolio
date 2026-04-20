@@ -5,12 +5,14 @@ const skillsData = {
         'JWT & Auth', 'WebSockets', 'Asterisk / VoIP', 'Jitsi Integration'
     ],
     frontend: [
-        'JavaScript (ES6+)', 'React.js', 'Next.js', 'HTML5 & CSS3', 
+        'JavaScript (ES6+)', 'React.js', 'Next.js', 'Vue.js', 'Ant Design', 
+        'VueX', 'Redux', 'Zustand', 'TanStack Query', 'HTML5 & CSS3', 
         'Bootstrap', 'Material-UI'
     ],
     devops: [
-        'MySQL', 'PostgreSQL', 'Prisma ORM', 'Docker & Compose', 
-        'Git & GitLab', 'ELK Stack', 'Winston Logging'
+        'MySQL', 'PostgreSQL', 'Prisma ORM', 'AWS', 'Digital Ocean', 
+        'Contabo', 'CI/CD', 'Docker & Compose', 'Git & GitLab', 
+        'ELK Stack', 'Winston Logging'
     ]
 };
 

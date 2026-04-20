@@ -17,14 +17,17 @@ const skillsData = {
 };
 
 const projectsData = [
-    { name: 'CartUp', desc: 'Multi-vendor e-commerce platform with complex vendor management.', tag: 'E-COMMERCE', image: 'img/projects/project__cartup.png', url: '#' },
-    { name: 'Foodi', desc: 'Comprehensive food delivery service management system.', tag: 'SERVICE', image: 'img/projects/project_foodi.png', url: '#' },
-    { name: 'FlightOps', desc: 'Flight schedule and roostering system for aviation operations.', tag: 'LOGISTICS', image: 'img/projects/project__flightops.png', url: '#' },
+    { name: 'CartUp', desc: 'Multi-vendor e-commerce platform with complex vendor management.', tag: 'E-COMMERCE', image: 'img/projects/project__cartup.png', url: 'https://cartup.com/' },
+    { name: 'Foodi', desc: 'Comprehensive food delivery service management system.', tag: 'SERVICE', image: 'img/projects/project_foodi.png', url: 'https://foodibd.com/' },
+    { name: 'Support Ticket System', desc: 'Cross-application ticketing system with secure user access.', tag: 'UTILITY', image: 'img/projects/project_support_ticketing_system.png', url: 'https://support.firsttrip.com/admin/login' },
+    { name: 'FlightOps', desc: 'Flight schedule and roostering system for aviation operations.', tag: 'LOGISTICS', image: 'img/projects/project__flightops.png', url: 'https://dev-flightops.usbair.com/' },
+    { name: 'USB Exam', desc: 'Secure online examination platform for educational institutions.', tag: 'EDUCATION', image: 'img/projects/usb_exam.png', url: 'http://192.168.145.156:3000/' },
+    { name: 'ETS - Employee Tracking System', desc: 'Track Employee Activity in Real-Time.', tag: 'ETS', image: 'img/projects/project_ets.png', url: 'https://ett.technonext.com/' },
     { name: 'USB Express', desc: 'Courier service management system with real-time tracking.', tag: 'COURIER', image: 'img/projects/usb_express.png', url: '#' },
-    { name: 'USB Exam', desc: 'Secure online examination platform for educational institutions.', tag: 'EDUCATION', image: 'img/projects/usb_exam.png', url: '#' },
     { name: 'Meditrip', desc: 'Health travel & visa service platform for medical tourism.', tag: 'HEALTHCARE', image: 'img/projects/project__meditrip.png', url: '#' },
-    { name: 'Support Ticket System', desc: 'Cross-application ticketing system with secure user access.', tag: 'UTILITY', image: 'img/projects/project_support_ticketing_system.png', url: '#' },
-    { name: 'IPPBX - Call Center', desc: 'Robust call center management system built with Asterisk and Issabel IPPBX.', tag: 'VOIP', image: 'img/projects/project_ippbx.png', url: '#' }
+    { name: 'IPPBX - Call Center', desc: 'Robust call center management system built with Asterisk and Issabel IPPBX.', tag: 'VOIP', image: 'img/projects/project_ippbx.png', url: '#' },
+    
+
 ];
 
 // --- THREE.JS BACKGROUND ---
@@ -212,25 +215,49 @@ function initScrollAnimations() {
     });
 }
 
+// --- HERO MONITOR INTERACTION ---
+function initHeroMonitorTilt() {
+    const monitor = document.querySelector('.vcs-hero-monitor');
+    if (!monitor || window.innerWidth <= 900) return;
+
+    const baseTiltX = 5;
+    const baseTiltY = -8;
+    const hoverLift = -6;
+    const hoverScale = 1.03;
+
+    function setMonitorTransform({ tiltX = baseTiltX, tiltY = baseTiltY, liftY = 0, scale = 1.02 }) {
+        monitor.style.setProperty('--tilt-x', `${tiltX}deg`);
+        monitor.style.setProperty('--tilt-y', `${tiltY}deg`);
+        monitor.style.setProperty('--lift-y', `${liftY}px`);
+        monitor.style.setProperty('--monitor-scale', scale);
+    }
+
+    monitor.addEventListener('mousemove', (event) => {
+        const rect = monitor.getBoundingClientRect();
+        const offsetX = (event.clientX - rect.left) / rect.width - 0.5;
+        const offsetY = (event.clientY - rect.top) / rect.height - 0.5;
+
+        const tiltX = baseTiltX + offsetY * -12;
+        const tiltY = baseTiltY + offsetX * 14;
+
+        setMonitorTransform({
+            tiltX,
+            tiltY,
+            liftY: hoverLift,
+            scale: hoverScale
+        });
+    });
+
+    monitor.addEventListener('mouseleave', () => {
+        setMonitorTransform({});
+    });
+}
+
 // --- INITIALIZE ALL ---
 document.addEventListener('DOMContentLoaded', () => {
     initThreeJS();
     initTypingEffect();
     injectContent();
     initScrollAnimations();
-
-    // Contact Form handling (Simulation)
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        const originalText = btn.textContent;
-        btn.textContent = 'SIGNAL SENT ✓';
-        btn.style.background = 'var(--secondary)';
-        form.reset();
-        setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-        }, 3000);
-    });
+    initHeroMonitorTilt();
 });

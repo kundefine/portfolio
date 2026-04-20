@@ -21,7 +21,7 @@
     <!-- Navigation -->
     <nav class="glass-nav">
         <div class="nav-container">
-            <span class="logo">ARCHITECT<span class="dot">.</span></span>
+            <span class="logo">MD KAJAL MIA<span class="dot">.</span></span>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -35,48 +35,44 @@
         <!-- Hero Section -->
         <section id="hero" class="v-center">
             <div class="content-wrapper">
-                <!-- Moved VCS Monitor to Top of Hero -->
-                <div class="vcs-hero-monitor">
-                    <div class="monitor-header">
-                        <span class="ping-dot"></span>
-                        <span class="vcs-label">LIVE_VCS_FEED</span>
-                    </div>
-                    <div class="monitor-content">
-                        <img src="img/vcs.png" alt="GitHub Activity" class="vcs-img">
-                    </div>
-                    <div class="monitor-footer">SYSTEM_ACTIVITY_MONITOR_v1.0</div>
-                </div>
-
-                <div class="split-grid hero-split">
-                    <div class="grid-left">
-                        <div class="hero-labels">
-                            <span class="terminal-tag">SYSTEM_INITIALIZED: v2.0.4</span>
+                <div class="hero-shell">
+                    <div class="split-grid hero-split">
+                        <div class="grid-left">
+                            <h1 class="display-lg">
+                                I BUILD <br>
+                                <span class="gradient-text">SCALABLE SYSTEMS</span>
+                            </h1>
+                            <p class="body-lg typing-text" id="intro-typing">
+                                > Initializing software engineer profile...
+                            </p>
+                            <div class="cta-group">
+                                <a href="#projects" class="btn-primary">View Projects</a>
+                                <a href="#contact" class="btn-secondary">Get In Touch</a>
+                            </div>
                         </div>
-                        <h1 class="display-lg">
-                            I BUILD <br>
-                            <span class="gradient-text">SCALABLE SYSTEMS</span>
-                        </h1>
-                        <p class="body-lg typing-text" id="intro-typing">
-                            > Initializing software engineer profile...
-                        </p>
-                        <div class="cta-group">
-                            <a href="#projects" class="btn-primary">View Projects</a>
-                            <a href="#contact" class="btn-secondary">Get In Touch</a>
-                        </div>
-                    </div>
-                    <div class="grid-right hero-visual">
-                        <div class="hero-core-container">
-                            <!-- SVG Animation -->
-                            <svg class="hero-core-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                                <circle class="core-ring ring-1" cx="200" cy="200" r="180" />
-                                <circle class="core-ring ring-2" cx="200" cy="200" r="140" />
-                                <circle class="core-ring ring-3" cx="200" cy="200" r="100" />
-                                <circle class="core-ring ring-4" cx="200" cy="200" r="60" stroke-dasharray="10, 20" />
-                                <g class="core-inner">
-                                    <circle cx="200" cy="200" r="20" fill="var(--primary)" />
-                                    <path class="pulse-line" d="M200 150 V250 M150 200 H250" />
-                                </g>
-                            </svg>
+                        <div class="grid-right hero-visual">
+                            <div class="vcs-hero-monitor">
+                                <div class="monitor-header">
+                                    <span class="ping-dot"></span>
+                                    <span class="vcs-label">LIVE_VCS_FEED</span>
+                                </div>
+                                <div class="monitor-content">
+                                    <img src="img/vcs.png" alt="GitHub Activity" class="vcs-img">
+                                </div>
+                            </div>
+                            <div class="hero-core-container">
+                                <!-- SVG Animation -->
+                                <svg class="hero-core-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                                    <circle class="core-ring ring-1" cx="200" cy="200" r="180" />
+                                    <circle class="core-ring ring-2" cx="200" cy="200" r="140" />
+                                    <circle class="core-ring ring-3" cx="200" cy="200" r="100" />
+                                    <circle class="core-ring ring-4" cx="200" cy="200" r="60" stroke-dasharray="10, 20" />
+                                    <g class="core-inner">
+                                        <circle cx="200" cy="200" r="20" fill="var(--primary)" />
+                                        <path class="pulse-line" d="M200 150 V250 M150 200 H250" />
+                                    </g>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,7 +99,7 @@
                         </div>
                         <div class="terminal-body">
                             <p class="body-md">
-                                I am a passionate Software Engineer with over 2 years of professional experience building scalable web applications and backend systems. I specialize in designing efficient APIs, handling complex business logic, and working with modern full-stack technologies.
+                                I am a passionate Software Engineer with over 6 years of professional experience building scalable web applications and backend systems. I specialize in designing efficient APIs, handling complex business logic, and working with modern full-stack technologies.
                             </p>
                             <p class="body-md">
                                 Currently working at <span class="highlight">Technonext</span>, I have contributed to multiple real-world projects including e-commerce platforms, ticketing systems, exam platforms, and service-based applications. I enjoy solving challenging problems, optimizing performance, and building systems that are reliable and maintainable.
@@ -162,20 +158,25 @@
                     </div>
                 </div>
                 <div class="grid-right">
+                    <div data-fs-success>Thanks for your submission!</div>
+                    <div data-fs-error>Oops! There was a problem submitting your form.</div>
                     <form id="contact-form" class="glass-form">
                         <div class="input-group">
                             <label for="name">NAME</label>
-                            <input type="text" id="name" required placeholder="John Doe">
+                            <input type="text" id="name" name="name" data-fs-field required placeholder="John Doe">
+                            <span data-fs-error="name"></span>
                         </div>
                         <div class="input-group">
                             <label for="email">EMAIL</label>
-                            <input type="email" id="email" required placeholder="john@example.com">
+                            <input type="email" id="email" name="email" data-fs-field required placeholder="john@example.com">
+                            <span data-fs-error="email"></span>
                         </div>
                         <div class="input-group">
                             <label for="message">MESSAGE</label>
-                            <textarea id="message" rows="5" required placeholder="Let's build something..."></textarea>
+                            <textarea id="message" name="message" data-fs-field rows="5" required placeholder="Let's build something..."></textarea>
+                            <span data-fs-error="message"></span>
                         </div>
-                        <button type="submit" class="btn-primary">SEND SIGNAL</button>
+                        <button type="submit" class="btn-primary" data-fs-submit-btn>SEND SIGNAL</button>
                     </form>
                 </div>
             </div>
@@ -183,11 +184,27 @@
     </main>
 
     <footer class="content-wrapper">
-        <p class="body-sm">© 2024 ARCHITECT | BUILT WITH PRECISION</p>
+        <p class="body-sm">© Md. Kajal Mia</p>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+
+        formspree('initForm', {
+            formElement: '#contact-form',
+            formId: 'xzdyvjbp',
+            onSuccess: function () {
+                alert('Message sent successfully!');
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
